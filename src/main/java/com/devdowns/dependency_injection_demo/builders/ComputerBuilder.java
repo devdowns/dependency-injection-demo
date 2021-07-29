@@ -1,16 +1,16 @@
 package com.devdowns.dependency_injection_demo.builders;
 
-import com.devdowns.dependency_injection_demo.enums.LaptopMakers;
+import com.devdowns.dependency_injection_demo.enums.ComputerMakers;
 import com.devdowns.dependency_injection_demo.models.MacBook;
 import com.devdowns.dependency_injection_demo.models.Thinkpad;
-import com.devdowns.dependency_injection_demo.restservice.Laptop;
+import com.devdowns.dependency_injection_demo.interfaces.Computer;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ComputerBuilder {
     private String program;
     private String model;
-    private LaptopMakers maker;
+    private ComputerMakers maker;
 
     public ComputerBuilder() {}
 
@@ -24,15 +24,15 @@ public class ComputerBuilder {
         return this;
     }
 
-    public ComputerBuilder withMaker(final LaptopMakers makers) {
+    public ComputerBuilder withMaker(final ComputerMakers makers) {
         this.maker = makers;
         return this;
     }
 
-    public Laptop build(){
-        if(LaptopMakers.APPLE.equals(maker)){
+    public Computer build(){
+        if(ComputerMakers.APPLE.equals(maker)){
             return new MacBook(this.model, this.program);
-        }else if(LaptopMakers.LENOVO.equals(maker)){
+        }else if(ComputerMakers.LENOVO.equals(maker)){
             return new Thinkpad(this.model, this.program);
         }
         return null;

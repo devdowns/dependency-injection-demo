@@ -1,12 +1,12 @@
 package com.devdowns.dependency_injection_demo.enums;
 
-public enum LaptopMakers {
+public enum ComputerMakers {
     APPLE("apple"),
     LENOVO("lenovo");
 
     private String value;
 
-    LaptopMakers(final String value){
+    ComputerMakers(final String value){
         this.value = value;
     }
 

@@ -2,18 +2,18 @@ package com.devdowns.dependency_injection_demo.factories;
 
 import com.devdowns.dependency_injection_demo.models.MacBook;
 import com.devdowns.dependency_injection_demo.models.Thinkpad;
-import com.devdowns.dependency_injection_demo.restservice.Laptop;
+import com.devdowns.dependency_injection_demo.interfaces.Computer;
 import org.springframework.stereotype.Component;
 
 import java.security.InvalidParameterException;
 
 @Component
-public class LaptopFactory {
+public class ComputerFactory {
 
-    public LaptopFactory() {}
+    public ComputerFactory() {}
 
 
-    public Laptop get(final String model){
+    public Computer get(final String model){
         if("Macbook".equals(model)){
             return new MacBook("macbook pro 13", "swift");
         }

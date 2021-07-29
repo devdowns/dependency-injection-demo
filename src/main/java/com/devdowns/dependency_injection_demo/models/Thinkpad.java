@@ -1,14 +1,14 @@
 package com.devdowns.dependency_injection_demo.models;
 
-import com.devdowns.dependency_injection_demo.enums.LaptopMakers;
-import com.devdowns.dependency_injection_demo.restservice.Laptop;
+import com.devdowns.dependency_injection_demo.enums.ComputerMakers;
+import com.devdowns.dependency_injection_demo.interfaces.Computer;
 import lombok.Data;
 
 @Data
-public class Thinkpad implements Laptop {
+public class Thinkpad implements Computer {
     private final String model;
     private final String program;
-    private final String maker = LaptopMakers.LENOVO.toString();
+    private final String maker = ComputerMakers.LENOVO.toString();
 
     public Thinkpad(String model, String program){
         this.model = model;
